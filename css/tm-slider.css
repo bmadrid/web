@@ -1,0 +1,111 @@
+* {
+  padding:0;
+  margin:0;
+}
+#page1 .slider-wrapper{
+  background: #fff;
+  border:1px solid #fff;
+  width:948px;
+  height:444px;
+  margin:0 auto;
+  position:relative;
+}
+#page1 .slider {
+  width:928px;
+  height:424px;
+  margin:0 auto;
+  position:relative;
+  background: none;
+  padding:0px;
+  z-index:1;
+  margin-top:10px;
+}
+
+#page2 .slider-wrapper, #page3 .slider-wrapper, #page4 .slider-wrapper, #page5 .slider-wrapper, #page6 .slider-wrapper, #page7 .slider-wrapper, #page8 .slider-wrapper{
+  background: #fff;
+  border:1px solid #fff;
+  width:948px;
+  height:276px;
+  margin:0 auto;
+  position:relative;
+}
+#page2 .slider, #page3 .slider, #page4 .slider, #page5 .slider, #page6 .slider, #page7 .slider, #page8 .slider {
+  width:928px;
+  height:256px;
+  margin:0 auto;
+  position:relative;
+  background: none;
+  padding:0px;
+  z-index:1;
+  margin-top:10px;
+}
+
+.items {
+  display:none;
+}
+
+.pagination {
+  position:absolute;
+  bottom:0px;
+  left:369px;
+  width:150px;
+  height:25px;
+  background:url(../images/bg-pagination.png) 0 0 no-repeat;
+  padding:10px 0 0 40px;
+  z-index:999;
+}
+
+.pagination li {
+  float:left;
+  padding:0;
+}
+.pagination li a {
+  font-size:0px;
+  line-height:0px;
+  display:block;
+  width:22px;
+  height:22px;
+}
+
+.pagination li a.green {background:url(../images/green.png) left top no-repeat;}
+.pagination li:hover a.green, .pagination li.current a.green {background-position:left bottom;}
+
+.pagination li a.orange {background:url(../images/orange.png) left top no-repeat;}
+.pagination li:hover a.orange, .pagination li.current a.orange {background-position:left bottom;}
+
+.pagination li a.red {background:url(../images/red.png) left top no-repeat;}
+.pagination li:hover a.red, .pagination li.current a.red {background-position:left bottom;}
+
+.pagination li a.blue {background:url(../images/blue.png) left top no-repeat;}
+.pagination li:hover a.blue, .pagination li.current a.blue {background-position:left bottom;}
+
+.pagination li a.dark-blue {background:url(../images/dark-blue.png) left top no-repeat;}
+.pagination li:hover a.dark-blue, .pagination li.current a.dark-blue {background-position:left bottom;}
+
+.play.paused {
+  color:#f00;
+}
+
+.progbar{
+  display:none;
+  background:#ff0;
+  width:100%;
+  height:10px;
+  position:absolute;
+  bottom:20px;
+  z-index:999;
+}
+
+.numStatus{
+  display:none;
+  position:absolute;
+  left:0;
+  bottom:0;
+  background:#000;
+  color:#fff;
+  z-index:999;
+}
+
+  
+
+
