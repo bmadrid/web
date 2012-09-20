@@ -30,10 +30,6 @@
             var aba =  $("input[name='aba']:checked").val();
             aba = aba == undefined || aba == 'no' ? 'no' : 'yes';
 
-            alert(intervention);
-
-            return false;
-
             $.ajax({
               type: "POST",
               url: "emailer.php",
@@ -147,8 +143,6 @@
     <input id="referer" name="referer" type="text" /><br /><br />
     
     <input id="submit" type="button" value="submit" /><br />
-  
-    <div id="error">error here</div>
 
   </body>
 

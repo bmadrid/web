@@ -1,10 +1,9 @@
 
 <?php
 
-  require_once('./phpmailer/class.phpmailer.php');
+  require_once( './phpmailer/class.phpmailer.php' );
 
-  foreach($_POST as $k=>$v)
-  {
+  foreach( $_POST as $k=>$v ) {
     if(ini_get('magic_quotes_gpc'))
     $_POST[$k]=stripslashes($_POST[$k]);
     
@@ -41,25 +40,16 @@
     $mail = new PHPMailer(); //true to output debug
     $mail->IsSMTP();
 
-    $accounts_raw = file_get_contents("accounts.json");
-    $email_settings = json_decode($accounts_raw, true);
-
-    echo $email_settings[ "username" ];
-
     try {
       $mail->Host       = "ssl://smtp.gmail.com";
       $mail->SMTPDebug  = 1;
       $mail->SMTPAuth   = true;
       $mail->Host       = "ssl://smtp.gmail.com";
       $mail->Port       = 465;
-      $mail->Username   = $email_settings[ "username" ];
-      $mail->Password   = $email_settings[ "password" ];
-      // $mail->AddAddress( $email_settings[ "to" ], $email_settings[ "name" ] );
-      // $mail->SetFrom( $email_settings[ "from" ] , $email_settings[ "name" ] );
-
-      $mail->AddAddress( $email_settings[ "to" ], $email_settings[ "name" ] );
-      $mail->SetFrom( $email_settings[ "from" ] , $email_settings[ "name" ] );
-      
+      $mail->Username   = "bmadrid@spectrumprek.com";
+      $mail->Password   = "TEAMSPECTRUM2012";
+      $mail->AddAddress( "contact@spectrumpre.com", "Survey" );
+      $mail->SetFrom( "contact@spectrumprek.com" , "Survey" );
       $mail->Subject = '[Survey] from ' . $name;
       $mail->MsgHTML($message);
       $mail->Send();
