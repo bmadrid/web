@@ -131,7 +131,7 @@
     <input id="interventionYes" type="radio" name="intervention" value="yes" /> Yes
     <div>
       <input id="interventionNo" type="radio" name="intervention" value="no" /> No
-    </div><br />a
+    </div><br />
     
     <label id="abaLabel" for="aba">Are you interested in receiving ABA therapy?</label><br />
     <input id="abaYes" type="radio" name="aba" value="yes" /> Yes
