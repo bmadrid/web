@@ -48,7 +48,7 @@
       $mail->Port       = 465;
       $mail->Username   = "bmadrid@spectrumprek.com";
       $mail->Password   = "TEAMSPECTRUM2012";
-      $mail->AddAddress( "contact@spectrumpre.com", "Survey" );
+      $mail->AddAddress( "contact@spectrumprek.com", "Survey" );
       $mail->SetFrom( "contact@spectrumprek.com" , "Survey" );
       $mail->Subject = '[Survey] from ' . $name;
       $mail->MsgHTML($message);
