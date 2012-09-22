@@ -20,8 +20,10 @@
           $( '#interventionNo' ).attr( "disabled", "disabled" );
           $( '#abaYes' ).attr( "disabled", "disabled" );
           $( '#abaNo' ).attr( "disabled", "disabled" );
+          $( '#screeningYes' ).attr( "disabled", "disabled" );
+          $( '#screeningNo' ).attr( "disabled", "disabled" );
           $( '#referer' ).attr( "disabled", "disabled" );
-          
+
           if ( validate() ) {
 
             var intervention = $("input[name='intervention']:checked").val();
@@ -29,6 +31,9 @@
 
             var aba =  $("input[name='aba']:checked").val();
             aba = aba == undefined || aba == 'no' ? 'no' : 'yes';
+
+            var screening =  $("input[name='screening']:checked").val();
+            screening = screening == undefined || screening == 'no' ? 'no' : 'yes';
 
             $.ajax({
               type: "POST",
@@ -41,6 +46,7 @@
                 needs: $( '#needs' ).val(),
                 intervention: intervention,
                 aba: aba,
+                screening: screening,
                 referer: $( '#referer' ).val()
               },
               beforeSend: function() {
@@ -82,16 +88,16 @@
     <style type="text/css">
 
       body { font-family: "Arial"; font-size: 10pt; }
-      center { margin-bottom: 20px; }
+      center { margin-bottom: 10px; }
       .error { color: #FF4500; }
       #name, #email, #age, #referer 
         { width: 445px; }
 
-      label { margin-left: 380px; float: left; width: 500px; }
-      textarea { margin-left: 400px; }
-      input { margin-left: 400px; }
+      label { margin-left: 400px; float: left; width: 500px; }
+      textarea { margin-left: 420px; }
+      input { margin-left: 420px; }
 
-      #submit { margin-left: 380px; }
+      #submit { margin-left: 400px; }
 
     </style>
   </head>
@@ -101,15 +107,11 @@
     <center>
       Welcome to Spectrum PreSchool!
       <br />
-      Thanks for stopping by.
+      Our website is under development.
       <br />
-      Our website is currently being developed.
+      Please take a moment to fill out the survey below.
       <br />
-      We'd very much appreciate it if you could take a moment to fill out the survey below.
-      <br />
-      We'd love to hear from you & all about your concerns. 
-      <br />
-      We're here for you.
+      We'd love to know how we can help. 
     </center>
 
     <label id="nameLabel" for="name">*Name:</label><br />
@@ -122,10 +124,10 @@
     <input id="age" /><br /><br />
     
     <label id="diagnosisLabel" for="diagnosis">What is your child's specific diagnosis?</label><br />
-    <textarea id="diagnosis" rows="3" cols="62"></textarea><br /><br />
+    <textarea id="diagnosis" rows="2" cols="61"></textarea><br /><br />
   
     <label id="needsLabel" for="needs">What are your family's needs?</label><br />
-    <textarea id="needs" rows="3" cols="62"></textarea><br /><br />
+    <textarea id="needs" rows="2" cols="61"></textarea><br /><br />
   
     <label id="interventionLabel" for="intervention">Are you interested in receiving in-home early intervention services?</label><br />
     <input id="interventionYes" type="radio" name="intervention" value="yes" /> Yes
@@ -138,12 +140,39 @@
     <div>
       <input id="abaNo" type="radio" name="aba" value="no" /> No
     </div><br />
+
+    <label id="screeningLabel" for="screening">**Would you be interested in a free screening?</label><br />
+    <input id="screeningYes" type="radio" name="screening" value="yes" /> Yes
+    <div>
+      <input id="screeningNo" type="radio" name="screening" value="no" /> No
+    </div><br />
+
     
     <label for="referer">How did you hear about us?</label><br />
     <input id="referer" name="referer" type="text" /><br /><br />
     
     <input id="submit" type="button" value="submit" /><br />
+    <br />
 
+    <label>* Required</label><br />
+    <label style="margin-bottom: 10px;">** This does not substitute a diagnosis, however a screening with professionals with extensive experience 
+      working with individuals with Autism Spectrum Disorders can be valuable.</label>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <center>
+      <a href="http://www.facebook.com/spectrumpreschool" target="_blank">
+        <img src="images/facebook.png"/>
+      </a>
+      <a href="http://spectrumprek.blogspot.com" target="_blank">
+        <img src="images/blogger.png" width="32" height="32" />
+      </a>
+      <a href="http://www.twitter.com/spectrumprek" target="_blank">
+        <img src="images/twitter.png" />
+      </a>
+    </center>
   </body>
 
 </html>

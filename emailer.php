@@ -25,7 +25,8 @@
     $diagnosis = empty( $_POST[ "diagnosis" ] ) ? "*Not Specified*" : $_POST[ "diagnosis" ];
     $needs = empty( $_POST[ "needs" ] ) ? "*Not Specified*" : $_POST[ "needs" ];
     $intervention = $_POST[ "intervention" ];
-    $aba =  $_POST[ "aba" ];
+    $aba = $_POST[ "aba" ];
+    $screening = $_POST[ "screening" ];
     $referer = empty( $_POST[ "referer" ] ) ? "*Not Specified*" : $_POST[ "referer" ];
 
     $message = "<p>Name: " . $name . "</p>" .
@@ -35,6 +36,7 @@
       "<p>Needs: " . $needs . "</p>" .
       "<p>Intervention: " . $intervention . "</p>" .
       "<p>ABA: " . $aba . "</p>" .
+      "<p>Screening: " . $screening . "</p>" .
       "<p>Referer: " . $referer . "</p>";
 
     $mail = new PHPMailer(); //true to output debug
