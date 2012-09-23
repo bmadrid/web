@@ -57,7 +57,10 @@
               },
               success: function( data, textStatus, xhr ) {
                 $.unblockUI({
-                  onUnblock: function() { $.growlUI('Sucess!', 'Thanks for your feedback!'); }
+                  onUnblock: function() { 
+                    //$.growlUI('Sucess!', 'Thanks for your feedback!'); 
+                    window.location = "http://spectrumprek.blogspot.com";
+                  }
                 });
               },
               error: function( jqXHR, exception ) {
@@ -113,31 +116,52 @@
         });
       }
 
+      function fb_click() { 
+        $('#fb_content').dialog({
+          width: 400,
+          height: 140,
+          position: { 
+            my: 'left bottom',
+            at: 'top',
+            of: $('#fb')
+          }
+        });
+      }
+
     </script>
 
     <style type="text/css">
 
       body { font-family: "Arial"; font-size: 10pt; }
-      #logo { position: absolute; margin-left: 25%; }
+      .ui-widget { font-family: Trebuchet MS, Tahoma, Verdana,
+        Arial, sans-serif; font-size: 11px; }
+      #logo { position: absolute; margin-left: 20px ; }
       
       center { margin-bottom: 10px; }
-      #name, #email, #age, #referer 
-        { width: 445px; }
+      #name, #email, #age, #diagnosis, #needs, #referer 
+        { width: 40%; }
 
-      label { float: left; margin-left: 32%; }
-      textarea { }
-      input[type="radio"] { float: left; margin-left: 34%; width: 20px; }
-      div#radio { width: 100%; height: 20px; }
-      span#radioLabel { float: left; width: 30px; }
+      label, #submit, #fbLike { float: left; margin-left: 25%; }
+      input[type="radio"] { float: left; margin-left: 27%; width: 20px; }
+      div#radio { width: 100%; height: 20px; margin-bottom: 5px; }
+      span#radioLabel { float: left; width: 25px; }
       
-      #submit { float: left; margin-left: 32%; }
-
       img { padding-right: 10px; }
 
     </style>
   </head>
 
   <body>
+
+    <div id="fb_content" style="display: none;">
+      <a href="http://facebook.com/spectrumpreschool" target="_blank">
+        facebook.com/spectrumpreschool</a><br /><br />
+      <iframe src="http://www.facebook.com/plugins/like.php?href=spectrumprek.com"
+        scrolling="no" frameborder="0"
+        style="border:none; width:360px; height:300px;">
+      </iframe> 
+    </div>
+
     <div id="logo">
       <img src="http://i.imgur.com/6HwCS.png" height="120" width="60" alt="logo" />
     </div>
@@ -206,8 +230,9 @@
       </center>
 
       <center>
-        <a href="http://www.facebook.com/spectrumpreschool" target="_blank">
-          <img src="images/facebook.png" alt="fb" border="0" title="fb"/></a>
+        
+        <span id="fb" onclick="fb_click();" target="_blank">
+          <img src="images/facebook.png" alt="fb" border="0" title="fb"/></span>
         <a href="http://spectrumprek.blogspot.com" target="_blank">
           <img src="images/blogger.png" width="32" height="32"/></a>
         <a href="http://www.twitter.com/spectrumprek" target="_blank">
