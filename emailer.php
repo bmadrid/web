@@ -21,6 +21,7 @@
 
     $name = $_POST[ "name" ];
     $email = $_POST[ "email" ];
+    $updates = $_POST[ "updates" ];
     $age = empty( $_POST[ "age" ] ) ? "*Not Specified*" : $_POST[ "age" ];
     $diagnosis = empty( $_POST[ "diagnosis" ] ) ? "*Not Specified*" : $_POST[ "diagnosis" ];
     $needs = empty( $_POST[ "needs" ] ) ? "*Not Specified*" : $_POST[ "needs" ];
@@ -31,6 +32,7 @@
 
     $message = "<p>Name: " . $name . "</p>" .
       "<p>Email: " . $email . "</p>" .
+      "<p>Updates: " . $updates . "</p>" .
       "<p>Age: " . $age . "</p>" .
       "<p>Diagnosis: " . $diagnosis . "</p>" .
       "<p>Needs: " . $needs . "</p>" .
